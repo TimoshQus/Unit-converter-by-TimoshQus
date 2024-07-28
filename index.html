@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TimoshQ's Unit Converter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <h1>TimoshQ's Unit Converter</h1>
+        </div>
+        <div class="converter">
+            <div class="input-group">
+                <label for="unit-type">Select Unit Type:</label>
+                <select id="unit-type" onchange="updateUnits()">
+                    <option value="length">Length</option>
+                    <option value="temperature">Temperature</option>
+                    <option value="weight">Weight</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label for="input-value">Value:</label>
+                <input type="number" id="input-value" oninput="convertUnits()">
+            </div>
+            <div class="input-group">
+                <label for="input-unit">From:</label>
+                <select id="input-unit" onchange="convertUnits()"></select>
+            </div>
+            <div class="input-group">
+                <label for="output-unit">To:</label>
+                <select id="output-unit" onchange="convertUnits()"></select>
+            </div>
+            <div class="result">
+                <p>Result: <span id="output-value"></span></p>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
+    <script>
+        kofiWidgetOverlay.draw('timoshq', {
+            'type': 'floating-chat',
+            'floating-chat.donateButton.text': 'Support me',
+            'floating-chat.donateButton.background-color': '#5bc0de',
+            'floating-chat.donateButton.text-color': '#323842'
+        });
+    </script>
+</body>
+</html>
