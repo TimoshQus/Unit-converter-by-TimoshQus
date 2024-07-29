@@ -41,7 +41,18 @@ function updateUnits() {
         inputUnit.appendChild(option1);
         outputUnit.appendChild(option2);
     }
+
+    inputUnit.selectedIndex = 0;
+    updateOutputUnit();
     convertUnits();
+}
+
+function updateOutputUnit() {
+    const inputUnit = document.getElementById('input-unit');
+    const outputUnit = document.getElementById('output-unit');
+
+    // Set the output unit to the next available option, or the first if at the end
+    outputUnit.selectedIndex = (inputUnit.selectedIndex + 1) % outputUnit.options.length;
 }
 
 function convertUnits() {
